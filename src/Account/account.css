@@ -1,0 +1,231 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.account-contain {
+  background: url(./bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #000;
+  min-height: 100vh;
+  padding-bottom: 100px;
+  overflow: hidden;
+  position: relative;
+}
+
+.account-contain .account-contain-underlay {
+  background: rgba(0, 0, 0, 0.1);
+  bottom: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.account-structure {
+  position: relative;
+  color: #fff;
+  padding: 50px 0 25px;
+  text-align: center;
+}
+
+.account-structure h4 {
+  font-size: 46px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.account-structure p {
+  font-size: 1.15em;
+  margin: 0 0 35px 0;
+}
+
+.account-structure hr {
+  margin: 0 auto;
+  border: 0;
+  width: 50px;
+  height: 1px;
+  background: #fff;
+}
+
+.account-form {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  bottom: 0;
+  padding: 25px;
+  position: relative;
+  width: 100%;
+}
+
+.account-form label {
+  color: #fff;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 25px;
+}
+
+.account-form input {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+  border: 0;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #fcfcfc;
+  color: #000;
+  height: 50px;
+  margin-bottom: 10px;
+  outline: 0;
+  padding: 0 15px;
+  width: 100%;
+}
+
+.account-form input::-webkit-input-placeholder {
+  color: #000;
+}
+
+.account-form input:-ms-input-placeholder {
+  color: #000;
+}
+
+.account-form input::-ms-input-placeholder {
+  color: #000;
+}
+
+.account-form input::placeholder {
+  color: #000;
+}
+
+.account-form input:focus {
+  background: whitesmoke;
+  color: #2079ff;
+}
+
+.account-submission {
+  -webkit-animation: 0.6s forwards slideIn;
+          animation: 0.6s forwards slideIn;
+  background: #fff;
+  bottom: -100px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 22.5px 30px;
+  position: fixed;
+  width: 100vw;
+  height: 100px;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  z-index: 1;
+}
+
+.account-submission .submission-btn {
+  background: #015BDE;
+  background-image: url(../Icons/arrow.png);
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 20px) center;
+  -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+          box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+  border: 0;
+  border-radius: 15px;
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  color: #fff;
+  float: right;
+  font-size: 1em;
+  height: 55px;
+  padding: 0 55px 0 20px;
+  text-align: left;
+}
+
+.account-submission .switch-account-btn {
+  border-radius: 10px;
+  float: left;
+  margin: 0;
+  padding: 0;
+  line-height: 55px;
+  font-size: 0.9em;
+  text-align: left;
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    bottom: -100px;
+  }
+  100% {
+    bottom: 0px;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    bottom: -100px;
+  }
+  100% {
+    bottom: 0px;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  body {
+    background: #fff;
+  }
+  .account-contain {
+    background-color: none;
+    background-size: 60%;
+    background-position: right center;
+    color: #000;
+    height: calc(100vh - 100px);
+    overflow-y: auto;
+    padding: 0 10vw 100px;
+  }
+  .account-contain .account-contain-underlay {
+    display: none;
+  }
+  .account-contain .account-form, .account-contain .account-structure {
+    width: 25vw;
+    padding: 50px 0;
+  }
+  .account-structure {
+    color: #3d3d3d;
+    text-align: left;
+  }
+  .account-structure hr {
+    background: #3d3d3d;
+    margin: 0;
+  }
+  .account-form label {
+    color: #000;
+  }
+  .account-form input {
+    border: 1px solid #e7e7e7;
+  }
+  .account-submission {
+    background: #fff;
+    border-top: 2px solid #e7e7e7;
+    bottom: 0;
+    padding: 22.5px 10vw;
+    position: fixed;
+    width: 100vw;
+    overflow: hidden;
+  }
+  .account-submission .submission-btn {
+    float: right;
+  }
+  .account-submission .switch-account-btn {
+    float: left;
+  }
+}
+/*# sourceMappingURL=account.css.map */
