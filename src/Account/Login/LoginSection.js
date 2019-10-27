@@ -39,5 +39,4 @@ export default class LoginSection extends React.Component {
             </div>
         );
     }
-
 }

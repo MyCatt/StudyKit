@@ -44,5 +44,4 @@ export default class RegisterSection extends React.Component {
             </div>
         );
     }
-
 }
