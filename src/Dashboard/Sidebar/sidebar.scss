@@ -1,0 +1,19 @@
+#sidebar {
+    //animation: 0.3s forwards slideSideBar;
+    background: #01193d;
+    display: none;
+    position: fixed;
+    width: 80vw;
+    height: 100vh;
+    transform: translate3d(0);
+    left: -80vw;
+}
+
+@keyframes slideSideBar {
+    from {
+        left: -80vw;
+    }
+    to {
+        left: 0vw;
+    }
+}

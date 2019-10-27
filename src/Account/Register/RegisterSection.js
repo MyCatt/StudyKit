@@ -34,7 +34,9 @@ export default class RegisterSection extends React.Component {
                     </form>
                 </div>
                 <div className="account-submission">
-                    <button className="submission-btn">Register</button>
+                    <Link to="/dashboard">
+                        <button className="submission-btn">Register</button>
+                    </Link>  
                     <Link to="/login">
                         <p className="switch-account-btn">I have an account!</p>
                     </Link>

@@ -29,7 +29,9 @@ export default class LoginSection extends React.Component {
                     </form>
                 </div>
                 <div className="account-submission">
-                    <button className="submission-btn">Login</button>
+                    <Link to="/dashboard">
+                        <button className="submission-btn">Login</button>
+                    </Link>    
                     <Link to="/register">
                         <p className="switch-account-btn">I don't have an account!</p>
                     </Link>
