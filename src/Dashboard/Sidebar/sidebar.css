@@ -1,12 +1,14 @@
 #sidebar {
-  background: #015BDE;
+  background: #dceaff;
   display: none;
   position: fixed;
   width: 80vw;
   height: 100vh;
   -webkit-transform: translate3d(0);
           transform: translate3d(0);
+  top: 60px;
   left: -80vw;
+  z-index: 10;
 }
 
 @-webkit-keyframes slideSideBar {

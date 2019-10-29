@@ -1,12 +1,14 @@
 #sidebar {
     //animation: 0.3s forwards slideSideBar;
-    background: #015BDE; //#015BDE
+    background: rgb(220, 234, 255); //#015BDE
     display: none;
     position: fixed;
     width: 80vw;
     height: 100vh;
     transform: translate3d(0);
+    top: 60px;
     left: -80vw;
+    z-index: 10;
 }
 
 @keyframes slideSideBar {
