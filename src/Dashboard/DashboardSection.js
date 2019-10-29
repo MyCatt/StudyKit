@@ -2,6 +2,8 @@ import React from 'react';
 import Sidebar from './Sidebar/Sidebar';
 import Nav from './Nav/Nav';
 import Hammer from 'react-hammerjs';
+import AddDocument from './AddDocument/AddDocument';
+import Document from './Document/Document';
 import './dashboard.css';
 
 export default class Dashboard extends React.Component {
@@ -29,12 +31,12 @@ export default class Dashboard extends React.Component {
 
     triggerMenu(e) {
         if(!e.direction){
-            this.setState({ NavVisible: true,  navPos: (this.state.navPos < 0) ? 0 : -(this.state.screenWidth*0.8)});
-            this.setState({transitionNav: 'left 0.5s ease'});
-        } else if(e.direction === 4 && -(this.state.screenWidth*0.8) + e.center.x < 0){
-            this.setState({ NavVisible: true,  navPos: -(this.state.screenWidth*0.8) + e.center.x});
-        }else if(e.direction === 2 && -(this.state.screenWidth*0.8) + e.center.x < 0)
-            this.setState({ NavVisible: true,  navPos: -(this.state.screenWidth*0.8) + e.center.x});
+            this.setState({ NavVisible: true,  navPos: (this.state.navPos < 0) ? 0 : -(this.state.screenWidth*0.8009)});
+            this.setState({transitionNav: 'left 0.35s ease'});
+        } else if(e.direction === 4 && -(this.state.screenWidth*0.8009) + e.center.x < 0){
+            this.setState({ NavVisible: true,  navPos: -(this.state.screenWidth*0.8009) + e.center.x});
+        }else if(e.direction === 2 && -(this.state.screenWidth*0.8009) + e.center.x < 0)
+            this.setState({ NavVisible: true,  navPos: -(this.state.screenWidth*0.8009) + e.center.x});
     }
 
     triggerUnlockMenu() {
@@ -42,7 +44,7 @@ export default class Dashboard extends React.Component {
     }
 
     triggerLockMenu() {
-        this.setState({transitionNav: 'left 0.5s ease'})
+        this.setState({transitionNav: 'left 0.35s ease'})
         if(this.state.navPos < -this.state.screenWidth/2) {
             this.setState({ navPos: '-80vw' })
         }else{
@@ -61,12 +63,15 @@ export default class Dashboard extends React.Component {
             
                 <div>
                     <Nav triggerEvent={this.triggerMenu} />
+                    
                     <Hammer onPan={this.triggerMenu} onPanStart={this.triggerUnlockMenu} onPanEnd={this.triggerLockMenu} options={hammerOptions}>
                         <div>
                             <Sidebar transition={this.state.transitionNav} leftPos={this.state.navPos} isVisible={this.state.NavVisible ? 'block' : 'none'} />
                             <div id="sidebarHandle"></div>
                         </div>
                     </Hammer>
+                    <Document />
+                    <AddDocument />
                 </div>
         );
     }

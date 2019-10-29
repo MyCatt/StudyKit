@@ -1,0 +1,43 @@
+#add-document-btn {
+  -webkit-animation: expandAdd 0.4s forwards;
+          animation: expandAdd 0.4s forwards;
+  background: #01193d;
+  border-radius: 30px;
+  color: #fff;
+  text-align: center;
+  line-height: 60px;
+  font-size: 22px;
+  margin: 0;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: scale 0.5s ease;
+  transition: scale 0.5s ease;
+}
+
+@-webkit-keyframes expandAdd {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes expandAdd {
+  from {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+/*# sourceMappingURL=adddocument.css.map */
