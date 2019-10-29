@@ -1,14 +1,41 @@
 #sidebar {
     //animation: 0.3s forwards slideSideBar;
-    background: rgb(220, 234, 255); //#015BDE
+    background: #00245a; //#015BDE
     display: none;
     position: fixed;
-    width: 80vw;
+    width: 70vw;
     height: 100vh;
     transform: translate3d(0);
     top: 60px;
     left: -80vw;
     z-index: 10;
+    h5 {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 12px;
+        font-weight: bold;
+        margin: 20px 0 0 0;
+        text-transform: uppercase;
+        padding: 0 0 0 10px;
+    }
+    ul {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0;
+        li {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 5px solid rgba(255, 255, 255, 0.05);
+            box-sizing: border-box;
+            color: #fff;
+            margin-bottom: 0px;
+            font-size: 0.9em;
+            padding: 15px 20px;
+            list-style: none;
+        }
+        .active {
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 5px solid #015BDE;
+        }
+    }
 }
 
 @keyframes slideSideBar {

@@ -10,14 +10,18 @@ export default class Nav extends React.Component {
             pageArray: ["280 S2 T2", "Lecture 1 notes", "280 hints", "280 Syntax"],
             openedPage: 0
         };
+        this.newlySelected = this.newlySelected.bind(this);
     }
 
-    render(props) {
+    newlySelected(index) {
+        this.setState({openedPage: index})
+    }
 
+    render() {
         return (
             <div>
                 <nav id="navigation">
-                    <img alt="Menu button" src={Burger} id="navigation-handburger" onClick={this.props.triggerEvent}></img>
+                    <img alt="Menu button" src={Burger} id="navigation-handburger" onClick={this.props.triggerEvent} style={{transform: `rotate(${180 - (180*this.props.xRotate)}deg)`}}></img>
                     <h5 id="navigation-title">Computer Science 280</h5>
                     <div id="navigation-avatars">
                         <span style={{background: 'rgb(255, 0, 191)'}}>M</span>
@@ -25,7 +29,7 @@ export default class Nav extends React.Component {
                     </div>
                 </nav>
                 <div id="page-shifter">
-                    {this.state.pageArray.map((content, index) => <span class={this.state.openedPage == index ? "page-shifter-item active" : "page-shifter-item"}>{content}</span> )}
+                    {this.state.pageArray.map((content, index) => <span onClick={() => this.newlySelected(index)} class={this.state.openedPage == index ? "page-shifter-item active" : "page-shifter-item"}>{content}</span> )}
                 </div>
             </div>
         );
