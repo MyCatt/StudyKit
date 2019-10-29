@@ -12,8 +12,9 @@ export default class Sidebar extends React.Component {
     }
 
     render() {
+        console.log(this.props.leftPos);
         return (
-            <aside id="sidebar" style={{display: this.props.isVisible, left: this.props.leftPos, transition: this.props.transition}}>
+            <aside id="sidebar" style={{display: this.props.isVisible, left: this.props.leftPos}}>
                 <h5>Your classes</h5>
                 <ul>
                     {   this.state.classList.map((content, index) => <li className={this.state.activeClass == index ? "active" : ""}>{content}</li>)   }

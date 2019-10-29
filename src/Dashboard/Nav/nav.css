@@ -54,7 +54,6 @@
           box-sizing: border-box;
   width: 100vw;
   height: 50px;
-  position: relative;
   padding: 0;
   overflow-x: auto;
   white-space: nowrap;
