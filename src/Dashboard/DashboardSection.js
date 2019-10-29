@@ -12,7 +12,7 @@ export default class Dashboard extends React.Component {
         super()
         this.state = {
             NavVisible: false,
-            navPos: 0,
+            navPos: -1,
             navWidth: 0.7
         }
         this.triggerMenu = this.triggerMenu.bind(this);

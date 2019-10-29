@@ -1,7 +1,51 @@
 #document {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 10px 0 0 0;
+  padding: 10px 0 300px 0;
+}
+
+#document #document-widgets {
+  -webkit-animation: popin 0.35s linear;
+          animation: popin 0.35s linear;
+  background: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-top: 2px solid #f3f3f3;
+  display: none;
+  position: fixed;
+  padding: 0 20px;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 9;
+}
+
+#document #document-widgets .document-widgets-button {
+  margin: 0 20px 0 0;
+  line-height: 50px;
+  display: inline-block;
+}
+
+@-webkit-keyframes popin {
+  from {
+    bottom: -40px;
+  }
+  to {
+    bottom: 0;
+  }
+}
+
+@keyframes popin {
+  from {
+    bottom: -40px;
+  }
+  to {
+    bottom: 0;
+  }
+}
+
+#document #document-content:focus + #document-widgets {
+  display: inline-block;
 }
 
 #document #document-content {

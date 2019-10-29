@@ -32,6 +32,10 @@ export default class Document extends React.Component {
                     
                     </p>
                 </div>
+                <div id="document-widgets">
+                    <div class="document-widgets-button"><b>Bold</b></div>
+                    <div class="document-widgets-button"><i>Italic</i></div>
+                </div>
             </div>
         );
     }
