@@ -14,7 +14,7 @@ export default class Dashboard extends React.Component {
             NavVisible: false,
             navPos: 0,
             navWidth: 0.7,
-            darkTheme: true
+            darkTheme: false
         }
         this.triggerMenu = this.triggerMenu.bind(this);
         this.triggerUnlockMenu = this.triggerUnlockMenu.bind(this);

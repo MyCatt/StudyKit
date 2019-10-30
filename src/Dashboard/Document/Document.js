@@ -24,7 +24,7 @@ export default class Document extends React.Component {
                     normal distribution of letters, as opposed to using 'Content here, content here', making it look 
                     like readable English.
                     <br/><br/>
-                    <q style={{background: '#01193d', color: '#fff'}}>This is an awesome quote!..</q>
+                    <q style={{background: this.props.theme ? '#01193d' : '#ebf3ff', color: this.props.theme ? '#fff' : '#01193d'}}>This is an awesome quote!..</q>
                     <br/><br/>
                     <div className="code-contain" style={{background: '#01193d'}}>
                         <SyntaxHighlighter language="javascript" style={atomOneDark}>
