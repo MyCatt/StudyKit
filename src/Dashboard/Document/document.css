@@ -1,7 +1,7 @@
 #document {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 10px 0 300px 0;
+  padding: 0 0 300px 0;
 }
 
 #document #document-widgets {
@@ -51,7 +51,6 @@
 #document #document-content {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background: #fff;
   padding: 50px 20px;
   outline: 0;
   width: 100%;
@@ -64,7 +63,7 @@
 }
 
 #document #document-content #document-content-title {
-  color: #3d3d3d;
+  color: #fff;
   font-size: 30px;
   margin-bottom: 15px;
 }
@@ -77,7 +76,7 @@
 }
 
 #document #document-content #document-content-main {
-  color: #3d3d3d;
+  color: #fff;
   font-size: 0.85em;
   /* desert scheme ported from vim to google prettify */
   /* string  - pink */
@@ -99,9 +98,9 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 4px;
-  border-left: 3px solid #01193d;
+  border-left: 3px solid #0153cf;
   font-style: italic;
-  background: #f6faff;
+  background: #00000018;
   display: block;
   margin: 0;
   padding: 10px 20px;
@@ -113,7 +112,7 @@
 }
 
 #document #document-content #document-content-main .code-contain {
-  background-color: #f6faff;
+  background-color: #0000003f;
   border-radius: 4px;
   padding: 10px;
   font-size: 14px;
@@ -127,7 +126,7 @@
 
 #document #document-content #document-content-main pre .nocode {
   background-color: none;
-  color: #000;
+  color: #fff;
 }
 
 #document #document-content #document-content-main pre .str {
@@ -152,12 +151,12 @@
 }
 
 #document #document-content #document-content-main pre .pun {
-  color: #3d3d3d;
+  color: #fff;
   font-style: italic;
 }
 
 #document #document-content #document-content-main pre .pln {
-  color: #3d3d3d;
+  color: #fff;
   font-weight: bold;
 }
 

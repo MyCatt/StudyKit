@@ -43,7 +43,7 @@
 }
 
 #page-shifter {
-    background: rgb(252, 252, 252);
+    background: #0c2650;
     box-sizing: border-box;
     width: 100vw;
     height: 50px;
@@ -52,10 +52,10 @@
     white-space: nowrap;
     #page-explore {
         float: left;
-        background: #fff;
+        background: rgba(255, 255, 255, 0.075);
         border-radius: 4px;
         border: 0;
-        color: #000;
+        color: #fff;
         margin: 7.5px;
         padding: 0 10px;
         height: 35px;
@@ -73,7 +73,7 @@
     .page-shifter-item {
         box-sizing: border-box;
         border-radius: 4px;
-        color: #000;
+        color: #fff;
         display: inline-block;
         margin: 0 4px;
         height: 50px;
