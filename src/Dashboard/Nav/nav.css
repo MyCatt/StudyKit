@@ -1,5 +1,4 @@
 #navigation {
-  background: #01193d;
   color: #fff;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -51,6 +50,7 @@
 #page-shifter {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   width: 100vw;
   height: 50px;
   padding: 0;
@@ -112,16 +112,13 @@
             box-sizing: border-box;
     margin: 0;
     padding: 0 20px;
-    background: #fff;
-    color: #000;
+    color: inherit;
     width: calc(100% - 250px);
     margin-left: 250px;
   }
   #page-shifter {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    border-top: 1px solid #eeeeee;
-    border-bottom: 1px solid #eeeeee;
     padding: 0 20px;
     width: calc(100% - 250px);
     margin-left: 250px;

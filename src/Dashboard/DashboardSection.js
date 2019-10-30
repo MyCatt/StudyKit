@@ -25,7 +25,7 @@ export default class Dashboard extends React.Component {
 
     componentDidMount() {
         window.addEventListener("resize", this.resize.bind(this));
-        document.body.style = `background: ${this.state.darkTheme ? '0c2650' : '#fff'};`;
+        document.body.style = `background: ${this.state.darkTheme ? '#0c1625' : '#fff'};`;
         this.resize();
     }
     
@@ -39,7 +39,7 @@ export default class Dashboard extends React.Component {
 
     switchTheme(newState) {
         this.setState({darkTheme: newState});
-        document.body.style = `background: ${newState ? '0c2650' : '#fff'};`;
+        document.body.style = `background: ${newState ? '#0c1625' : '#fff'};`;
     }
 
     triggerMenu(e) {
@@ -79,7 +79,7 @@ export default class Dashboard extends React.Component {
                     
                     <Hammer onPan={this.triggerMenu} onPanStart={this.triggerUnlockMenu} onPanEnd={this.triggerLockMenu} options={hammerOptions}>
                         <div>
-                            <Sidebar switchTheme={this.switchTheme} leftPos={this.state.navPos} isVisible={this.state.NavVisible ? 'block' : 'none'} />
+                            <Sidebar theme={this.state.darkTheme} switchTheme={this.switchTheme} leftPos={this.state.navPos} isVisible={this.state.NavVisible ? 'block' : 'none'} />
                             <div id="sidebarHandle"></div>
                         </div>
                     </Hammer>

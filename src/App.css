@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
 body{
-  background: #192a49;
   font-family: 'Open Sans', sans-serif;
 }
 .App {
@@ -23,5 +22,5 @@ body{
 }
 
 .App-link {
-  color: #09d3ac;
+  color: #00245e;
 }

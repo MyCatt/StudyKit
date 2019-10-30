@@ -28,8 +28,8 @@ export default class Sidebar extends React.Component {
                 <ul>
                     {   this.state.classList.map((content, index) => <li className={this.state.activeClass == index ? "active" : ""}>{content}</li>)   }
                     <br/><br/>
-                    <li id="dark" class="active" onClick={() => this.props.switchTheme(true)}>Dark</li>
-                    <li id="light" class="active" onClick={() => this.props.switchTheme(false)}>Light</li>
+                    <li id="dark" className={this.props.theme ? "active" : ""} onClick={() => this.props.switchTheme(true)}>Dark</li>
+                    <li id="light" className={this.props.theme ? "" : "active"} onClick={() => this.props.switchTheme(false)}>Light</li>
                 </ul>
 
             </aside>

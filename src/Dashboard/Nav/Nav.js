@@ -18,12 +18,12 @@ export default class Nav extends React.Component {
         this.setState({openedPage: index})
     }
 
-    render() {
+    render(props) {
         return (
             <div>
-                <nav id="navigation">
+                <nav id="navigation" style={{background: this.props.theme ? '#01193d' : '#fff', color: '#fff'}}>
                     <img alt="Menu button" src={Burger} id="navigation-handburger" onClick={this.props.triggerEvent} style={{transform: `rotate(${180 - (180*this.props.xRotate)}deg)`}}></img>
-                    <h5 id="navigation-title">Computer Science 280</h5>
+                    <h5 id="navigation-title" style={{color: this.props.theme ? '#fff' : '#000'}}>Computer Science 280</h5>
                     <div id="navigation-avatars">
                         <span style={{background: 'rgb(255, 0, 191)'}}>M</span>
                         <span style={{background: 'rgb(77, 223, 90)'}}>T</span>
