@@ -1,8 +1,14 @@
 #add-document-btn {
     animation: expandAdd 0.4s forwards;
-    background: #01193d;
+    background: rgb(236, 246, 255);
+    border: 1px solid rgb(220, 238, 255);
+    background-image: url(../../Icons/write.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-radius: 30px;
     color: #fff;
+    display: none;
     text-align: center;
     line-height: 60px;
     font-size: 22px;

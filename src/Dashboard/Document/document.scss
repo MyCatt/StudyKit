@@ -78,6 +78,7 @@
                 background-color: #f6faff; 
                 border-radius: 4px;
                 padding: 10px;
+                font-size: 14px;
             }
 
             /* desert scheme ported from vim to google prettify */
@@ -115,5 +116,18 @@
             pre .atv, code .atv { color: #060 }
             }
         }
+    }
+}
+
+@media screen and (min-width: 950px) {
+    #document {
+        background: #fff;
+        box-sizing: content-box;
+        width: calc(60% - 250px);
+        padding: 50px 20% 50px calc(250px + 20%);
+    }
+    #document-content {
+        border-radius: 5px;
+        padding: 50px;
     }
 }

@@ -116,6 +116,7 @@
   background-color: #f6faff;
   border-radius: 4px;
   padding: 10px;
+  font-size: 14px;
 }
 
 #document #document-content #document-content-main pre.prettyprint {
@@ -225,6 +226,20 @@
   }
   #document #document-content #document-content-main pre .atv, #document #document-content #document-content-main code .atv {
     color: #060;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  #document {
+    background: #fff;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+    width: calc(60% - 250px);
+    padding: 50px 20% 50px calc(250px + 20%);
+  }
+  #document-content {
+    border-radius: 5px;
+    padding: 50px;
   }
 }
 /*# sourceMappingURL=document.css.map */

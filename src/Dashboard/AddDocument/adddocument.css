@@ -1,9 +1,15 @@
 #add-document-btn {
   -webkit-animation: expandAdd 0.4s forwards;
           animation: expandAdd 0.4s forwards;
-  background: #01193d;
+  background: #ecf6ff;
+  border: 1px solid #dceeff;
+  background-image: url(../../Icons/write.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border-radius: 30px;
   color: #fff;
+  display: none;
   text-align: center;
   line-height: 60px;
   font-size: 22px;

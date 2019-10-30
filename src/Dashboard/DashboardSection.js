@@ -11,7 +11,7 @@ export default class Dashboard extends React.Component {
     constructor() {
         super()
         this.state = {
-            NavVisible: false,
+            NavVisible: true,
             navPos: 0,
             navWidth: 0.7
         }
@@ -27,16 +27,20 @@ export default class Dashboard extends React.Component {
     }
     
     resize() {
-        this.setState({screenWidth: window.innerWidth});
+        if(window.innerWidth < 950) {
+        this.setState({screenWidth: window.innerWidth, navPos: this.state.NavVisible ? this.state.navPos : window.innerWidth * this.state.navWidth, NavVisible: window.innerWidth > 950});
     }
+}
 
     triggerMenu(e) {
-        if(!e.direction){
-            this.setState({ NavVisible: true,  navPos: (this.state.navPos < 0 || !this.state.NavVisible) ? 0 : -(this.state.screenWidth*this.state.navWidth)});
-        } else if(e.direction === 4 && -(this.state.screenWidth*this.state.navWidth) + e.center.x < 0){
-            this.setState({ NavVisible: true,  navPos: -(this.state.screenWidth*this.state.navWidth) + e.center.x});
-        }else if(e.direction === 2 && -(this.state.screenWidth*this.state.navWidth) + e.center.x > -(this.state.screenWidth*this.state.navWidth) && -(this.state.screenWidth*this.state.navWidth) + e.center.x < 0)
-            this.setState({ NavVisible: true,  navPos: -(this.state.screenWidth*this.state.navWidth) + e.center.x});
+        if(this.state.screenWidth < 950) { // Mobile/tablet
+            if(!e.direction){
+                this.setState({ NavVisible: true,  navPos: (this.state.navPos < 0 || !this.state.NavVisible) ? 0 : -(this.state.screenWidth*this.state.navWidth)});
+            } else if(e.direction === 4 && -(this.state.screenWidth*this.state.navWidth) + e.center.x < 0){
+                this.setState({ NavVisible: true,  navPos: -(this.state.screenWidth*this.state.navWidth) + e.center.x});
+            }else if(e.direction === 2 && -(this.state.screenWidth*this.state.navWidth) + e.center.x > -(this.state.screenWidth*this.state.navWidth) && -(this.state.screenWidth*this.state.navWidth) + e.center.x < 0)
+                this.setState({ NavVisible: true,  navPos: -(this.state.screenWidth*this.state.navWidth) + e.center.x});
+        }
     }
 
     triggerUnlockMenu() {

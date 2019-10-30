@@ -1,6 +1,7 @@
 import React from 'react';
 import './nav.css';
 import Burger from '../../../src/Icons/menu.png';
+import Book from '../../../src/Icons/write.png';
 
 export default class Nav extends React.Component {
 
@@ -29,6 +30,9 @@ export default class Nav extends React.Component {
                     </div>
                 </nav>
                 <div id="page-shifter">
+                    <div id="page-explore">
+                        <img src={Book}></img><span>Open File</span>
+                    </div>
                     {this.state.pageArray.map((content, index) => <span onClick={() => this.newlySelected(index)} class={this.state.openedPage == index ? "page-shifter-item active" : "page-shifter-item"}>{content}</span> )}
                 </div>
             </div>

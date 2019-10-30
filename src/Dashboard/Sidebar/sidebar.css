@@ -11,13 +11,39 @@
   z-index: 10;
 }
 
+#sidebar #sidebar-head {
+  background: rgba(255, 255, 255, 0.04);
+  margin: 0;
+  padding: 25px 0;
+  margin-bottom: 50px;
+}
+
 #sidebar h5 {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 12px;
-  font-weight: bold;
-  margin: 20px 0 0 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 0;
   text-transform: uppercase;
-  padding: 0 0 0 10px;
+  padding: 0 0 0 20px;
+}
+
+#sidebar h3 {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 15px 20px;
+  margin: 0;
+}
+
+#sidebar p {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  padding: 0 20px;
+  margin: 0;
+  line-height: 25px;
 }
 
 #sidebar ul {
@@ -28,20 +54,19 @@
 }
 
 #sidebar ul li {
-  background: rgba(255, 255, 255, 0.05);
-  border-left: 5px solid rgba(255, 255, 255, 0.05);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: #fff;
   margin-bottom: 0px;
-  font-size: 0.9em;
+  font-size: 14px;
   padding: 15px 20px;
   list-style: none;
 }
 
 #sidebar ul .active {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 91, 222, 0.1);
   border-left: 5px solid #015BDE;
+  font-weight: bold;
 }
 
 @-webkit-keyframes slideSideBar {
@@ -59,6 +84,14 @@
   }
   to {
     left: 0vw;
+  }
+}
+
+@media screen and (min-width: 950px) {
+  #sidebar {
+    background: #01193d;
+    width: 250px;
+    top: 0;
   }
 }
 /*# sourceMappingURL=sidebar.css.map */

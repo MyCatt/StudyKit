@@ -14,7 +14,7 @@ export default class AddDocument extends React.Component {
 
         return (
             <div id="add-document-btn">
-                +
+                
             </div>
         );
     }
