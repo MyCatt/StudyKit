@@ -1,5 +1,7 @@
 #navigation {
   color: #fff;
+  position: fixed;
+  top: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100vw;

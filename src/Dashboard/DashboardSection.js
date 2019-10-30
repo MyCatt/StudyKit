@@ -33,7 +33,7 @@ export default class Dashboard extends React.Component {
         if(window.innerWidth < 950) {
             this.setState({screenWidth: window.innerWidth, navPos: this.state.NavVisible ? this.state.navPos : window.innerWidth * this.state.navWidth});
         }else{
-            this.setState({NavVisible: true})
+            this.setState({NavVisible: true, navPos: 0})
         }
     }
 
