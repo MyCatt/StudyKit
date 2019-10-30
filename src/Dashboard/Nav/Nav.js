@@ -29,7 +29,7 @@ export default class Nav extends React.Component {
                         <span style={{background: 'rgb(77, 223, 90)'}}>T</span>
                     </div>
                 </nav>
-                <div id="page-shifter">
+                <div id="page-shifter" style={{background: this.props.theme ? '#0c2650' : '#fff', color: this.props.theme ? '#fff' : '#0c2650'}}>
                     <div id="page-explore">
                         <img src={Book}></img><span>Open File</span>
                     </div>

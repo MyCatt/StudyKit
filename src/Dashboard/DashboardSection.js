@@ -13,16 +13,19 @@ export default class Dashboard extends React.Component {
         this.state = {
             NavVisible: false,
             navPos: 0,
-            navWidth: 0.7
+            navWidth: 0.7,
+            darkTheme: true
         }
         this.triggerMenu = this.triggerMenu.bind(this);
         this.triggerUnlockMenu = this.triggerUnlockMenu.bind(this);
         this.triggerLockMenu = this.triggerLockMenu.bind(this);
         this.resize = this.resize.bind(this);
+        this.switchTheme = this.switchTheme.bind(this);
     }
 
     componentDidMount() {
         window.addEventListener("resize", this.resize.bind(this));
+        document.body.style = `background: ${this.state.darkTheme ? '0c2650' : '#fff'};`;
         this.resize();
     }
     
@@ -32,7 +35,12 @@ export default class Dashboard extends React.Component {
         }else{
             this.setState({NavVisible: true})
         }
-}
+    }
+
+    switchTheme(newState) {
+        this.setState({darkTheme: newState});
+        document.body.style = `background: ${newState ? '0c2650' : '#fff'};`;
+    }
 
     triggerMenu(e) {
         if(this.state.screenWidth < 950) { // Mobile/tablet
@@ -67,15 +75,15 @@ export default class Dashboard extends React.Component {
         return (
             
                 <div>
-                    <Nav triggerEvent={this.triggerMenu} xRotate={this.state.navPos/(this.state.screenWidth*this.state.navWidth)}/>
+                    <Nav theme={this.state.darkTheme} triggerEvent={this.triggerMenu} xRotate={this.state.navPos/(this.state.screenWidth*this.state.navWidth)}/>
                     
                     <Hammer onPan={this.triggerMenu} onPanStart={this.triggerUnlockMenu} onPanEnd={this.triggerLockMenu} options={hammerOptions}>
                         <div>
-                            <Sidebar leftPos={this.state.navPos} isVisible={this.state.NavVisible ? 'block' : 'none'} />
+                            <Sidebar switchTheme={this.switchTheme} leftPos={this.state.navPos} isVisible={this.state.NavVisible ? 'block' : 'none'} />
                             <div id="sidebarHandle"></div>
                         </div>
                     </Hammer>
-                    <Document />
+                    <Document theme={this.state.darkTheme} />
                     <AddDocument />
                 </div>
         );

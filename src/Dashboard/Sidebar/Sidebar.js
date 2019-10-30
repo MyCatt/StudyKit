@@ -21,12 +21,17 @@ export default class Sidebar extends React.Component {
                     <h3>Michael Catterall</h3>
                     <p>Edit Profile</p>
                     <p>Settings</p>
+
                 </div>
 
                 <h5>Your classes</h5>
                 <ul>
                     {   this.state.classList.map((content, index) => <li className={this.state.activeClass == index ? "active" : ""}>{content}</li>)   }
                 </ul>
+
+                <p id="dark" onClick={() => this.props.switchTheme(true)}>Dark</p>
+                <p id="light" onClick={() => this.props.switchTheme(false)}>Light</p>
+
             </aside>
         );
     }

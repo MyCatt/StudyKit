@@ -33,18 +33,19 @@
 
     #document-content {
         box-sizing: border-box;
+        color: inherit;
         padding: 50px 20px;
         outline: 0;
         width: 100%;
 
         h1, h2, h3, h4, h5, p {
-            color: #d3d3d3;
+            color: inherit;
             margin: 0;
             padding: 0;
         }
 
         #document-content-title {
-            color: #fff;
+            color: inherit;
             font-size: 30px;
             margin-bottom: 15px;
         }
@@ -57,7 +58,7 @@
         }
 
         #document-content-main {
-            color: #fff;
+            color: inherit;
             font-size: 0.85em;
 
             q {
@@ -120,7 +121,6 @@
 
 @media screen and (min-width: 950px) {
     #document {
-        background: #fff;
         box-sizing: content-box;
         width: calc(60% - 250px);
         padding: 50px 20% 50px calc(250px + 20%);

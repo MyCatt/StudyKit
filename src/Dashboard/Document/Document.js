@@ -14,16 +14,16 @@ export default class Document extends React.Component {
 
         return (
             <div id="document">
-                <div id="document-content" contenteditable="true">
+                <div id="document-content" contenteditable="true" style={{color: this.props.theme ? '#fff' : '#000'}}>
                     <h2 id="document-content-title">280 S2 T2</h2>
                     <p id="document-content-main">It is a long established fact that a reader will be distracted by the readable content of a 
                     page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less 
                     normal distribution of letters, as opposed to using 'Content here, content here', making it look 
                     like readable English.
                     <br/><br/>
-                    <q>This is awesome!..</q>
+                    <q style={{background: '#01193d', color: '#fff'}}>This is an awesome quote!..</q>
                     <br/><br/>
-                    <div className="code-contain">
+                    <div className="code-contain" style={{background: '#01193d'}}>
                         <pre className="prettyprint">
                             if apple in fruit:
                                 print("Nom nom")
