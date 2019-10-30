@@ -19,7 +19,6 @@
 }
 
 #sidebar h5 {
-  color: rgba(255, 255, 255, 0.5);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 1px;
@@ -29,7 +28,6 @@
 }
 
 #sidebar h3 {
-  color: #fff;
   font-size: 16px;
   font-weight: 600;
   padding: 15px 20px;
@@ -39,7 +37,6 @@
 #sidebar p {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  color: rgba(255, 255, 255, 0.8);
   font-size: 13px;
   padding: 0 20px;
   margin: 0;
@@ -56,7 +53,6 @@
 #sidebar ul li {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  color: #fff;
   margin-bottom: 0px;
   font-size: 14px;
   padding: 15px 20px;

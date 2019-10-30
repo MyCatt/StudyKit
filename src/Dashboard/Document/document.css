@@ -79,20 +79,6 @@
 #document #document-content #document-content-main {
   color: inherit;
   font-size: 0.85em;
-  /* desert scheme ported from vim to google prettify */
-  /* string  - pink */
-  /* comment - skyblue */
-  /* type    - lightgreen */
-  /* literal - darkred */
-  /* punctuation */
-  /* plaintext */
-  /* html/xml tag    - lightyellow */
-  /* attribute name  - khaki */
-  /* attribute value - pink */
-  /* decimal         - lightgreen */
-  /* Specify class=linenums on a pre to get line numbering */
-  /* IE indents via margin-left */
-  /* Alternate shading for lines */
 }
 
 #document #document-content #document-content-main q {
@@ -113,120 +99,12 @@
 }
 
 #document #document-content #document-content-main .code-contain {
-  background-color: #0000003f;
   border-radius: 4px;
-  padding: 10px;
   font-size: 14px;
 }
 
-#document #document-content #document-content-main pre.prettyprint {
-  display: block;
-  border: 0;
+#document #document-content #document-content-main pre {
   margin: 0;
-}
-
-#document #document-content #document-content-main pre .nocode {
-  background-color: none;
-  color: #fff;
-}
-
-#document #document-content #document-content-main pre .str {
-  color: #ffa0a0;
-}
-
-#document #document-content #document-content-main pre .kwd {
-  color: #015BDE;
-  font-weight: bold;
-}
-
-#document #document-content #document-content-main pre .com {
-  color: #87ceeb;
-}
-
-#document #document-content #document-content-main pre .typ {
-  color: #98fb98;
-}
-
-#document #document-content #document-content-main pre .lit {
-  color: #cd5c5c;
-}
-
-#document #document-content #document-content-main pre .pun {
-  color: #fff;
-  font-style: italic;
-}
-
-#document #document-content #document-content-main pre .pln {
-  color: #fff;
-  font-weight: bold;
-}
-
-#document #document-content #document-content-main pre .tag {
-  color: #f0e68c;
-  font-weight: bold;
-}
-
-#document #document-content #document-content-main pre .atn {
-  color: #bdb76b;
-  font-weight: bold;
-}
-
-#document #document-content #document-content-main pre .atv {
-  color: #ffa0a0;
-}
-
-#document #document-content #document-content-main pre .dec {
-  color: #98fb98;
-}
-
-#document #document-content #document-content-main ol.linenums {
-  margin-top: 0;
-  margin-bottom: 0;
-  color: #AEAEAE;
-}
-
-#document #document-content #document-content-main li.L0, #document #document-content #document-content-main li.L1, #document #document-content #document-content-main li.L2, #document #document-content #document-content-main li.L3, #document #document-content #document-content-main li.L5, #document #document-content #document-content-main li.L6, #document #document-content #document-content-main li.L7, #document #document-content #document-content-main li.L8 {
-  list-style-type: none;
-}
-
-@media print {
-  #document #document-content #document-content-main pre.prettyprint {
-    background-color: none;
-  }
-  #document #document-content #document-content-main pre .str, #document #document-content #document-content-main code .str {
-    color: #060;
-  }
-  #document #document-content #document-content-main pre .kwd, #document #document-content #document-content-main code .kwd {
-    color: #006;
-    font-weight: bold;
-  }
-  #document #document-content #document-content-main pre .com, #document #document-content #document-content-main code .com {
-    color: #600;
-    font-style: italic;
-  }
-  #document #document-content #document-content-main pre .typ, #document #document-content #document-content-main code .typ {
-    color: #404;
-    font-weight: bold;
-  }
-  #document #document-content #document-content-main pre .lit, #document #document-content #document-content-main code .lit {
-    color: #044;
-  }
-  #document #document-content #document-content-main pre .pun, #document #document-content #document-content-main code .pun {
-    color: #440;
-  }
-  #document #document-content #document-content-main pre .pln, #document #document-content #document-content-main code .pln {
-    color: #000;
-  }
-  #document #document-content #document-content-main pre .tag, #document #document-content #document-content-main code .tag {
-    color: #006;
-    font-weight: bold;
-  }
-  #document #document-content #document-content-main pre .atn, #document #document-content #document-content-main code .atn {
-    color: #404;
-  }
-  #document #document-content #document-content-main pre .atv, #document #document-content #document-content-main code .atv {
-    color: #060;
-  }
 }
 
 @media screen and (min-width: 950px) {

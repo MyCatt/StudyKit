@@ -1,6 +1,9 @@
 import React from 'react';
 import '../../App.css';
 import './document.css';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+
 import {
     BrowserRouter as Router,
     Link,
@@ -11,7 +14,7 @@ import {
 export default class Document extends React.Component {
 
     render() {
-
+        const codeString = '(num) => num + 1';
         return (
             <div id="document">
                 <div id="document-content" contenteditable="true" style={{color: this.props.theme ? '#fff' : '#000'}}>
@@ -24,10 +27,9 @@ export default class Document extends React.Component {
                     <q style={{background: '#01193d', color: '#fff'}}>This is an awesome quote!..</q>
                     <br/><br/>
                     <div className="code-contain" style={{background: '#01193d'}}>
-                        <pre className="prettyprint">
-                            if apple in fruit:
-                                print("Nom nom")
-                        </pre>
+                        <SyntaxHighlighter language="javascript" style={atomOneDark}>
+                            {codeString}
+                        </SyntaxHighlighter>
                     </div>
                     
                     </p>

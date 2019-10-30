@@ -7,16 +7,15 @@ export default class Sidebar extends React.Component {
         super();
         this.state = {
             classList: ["Computer Science 280", "Computer Science 230", "Information Systems 222", "Maori 101"],
-            activeClass: 0,
-        }
+            activeClass: 0
+        };
     }
 
     render() {
-        console.log(this.props.leftPos);
         return (
-            <aside id="sidebar" style={{display: this.props.isVisible, left: this.props.leftPos}}>
+            <aside id="sidebar" style={{display: this.props.isVisible, color: (this.props.theme ? "#fff" : "#01193d"), borderRight: '1px solid ' + (this.props.theme ? "#01193d" : "#f3f3f3"), left: this.props.leftPos, background: (this.props.theme ? "#01193d" : "#fff")}}>
 
-                <div id="sidebar-head">
+                <div id="sidebar-head" style={{background: (this.props.theme ? "#01193d" : "#f9fbff")}}>
                     <h5>Student</h5>
                     <h3>Michael Catterall</h3>
                     <p>Edit Profile</p>
