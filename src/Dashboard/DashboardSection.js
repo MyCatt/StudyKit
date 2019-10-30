@@ -11,7 +11,7 @@ export default class Dashboard extends React.Component {
     constructor() {
         super()
         this.state = {
-            NavVisible: true,
+            NavVisible: false,
             navPos: 0,
             navWidth: 0.7
         }
@@ -28,8 +28,10 @@ export default class Dashboard extends React.Component {
     
     resize() {
         if(window.innerWidth < 950) {
-        this.setState({screenWidth: window.innerWidth, navPos: this.state.NavVisible ? this.state.navPos : window.innerWidth * this.state.navWidth, NavVisible: window.innerWidth > 950});
-    }
+            this.setState({screenWidth: window.innerWidth, navPos: this.state.NavVisible ? this.state.navPos : window.innerWidth * this.state.navWidth});
+        }else{
+            this.setState({NavVisible: true})
+        }
 }
 
     triggerMenu(e) {
