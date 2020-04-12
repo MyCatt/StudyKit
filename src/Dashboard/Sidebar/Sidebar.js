@@ -32,7 +32,7 @@ export default class Sidebar extends React.Component {
 
                 <h5>Your classes</h5>
                 <ul>
-                    {   this.state.classList.map((content, index) => <li className={this.state.activeClass == index ? "active" : ""}><img src={this.state.iconList[index]}></img>{content}</li>)   }
+                    {   this.state.classList.map((content, index) => <li key={"nav" + index} className={this.state.activeClass == index ? "active" : ""}><img src={this.state.iconList[index]}></img>{content}</li>)   }
                     <br/><br/>
                     <h5>Theme</h5>
                     <br></br>

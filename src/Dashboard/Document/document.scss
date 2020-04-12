@@ -1,22 +1,44 @@
 #document {
     box-sizing: border-box;
-    padding: 0 0 300px 0;
+    padding: 0 25px 300px;
+    margin-top: 160px;
+    .DraftEditor-root {
+        color: inherit;
+    }
+    .DraftEditor-content{
+        
+        min-height: 100vh;
+        .DraftEditor-content-title {
+            color: #3d3d3d;
+        }
+    }
     #document-widgets {
         animation: popin 0.35s linear;
-        background: #fff;
+        background: #4f5c70;
+        border-radius: 15px;
         box-sizing: border-box;
-        border-top: 2px solid #f3f3f3;
-        display: none;
+        color: #000;
+        display: inline-grid;
+        grid-template-columns: auto auto auto auto auto auto;
+        justify-content: space-between;
         position: fixed;
         padding: 0 20px;
-        bottom: 0;
-        width: 100%;
+        bottom: 20px;
+        left: 20px;
+        width: calc(100% - 40px);
         height: 50px;
         z-index: 9;
         .document-widgets-button {
-            margin: 0 20px 0 0;
-            line-height: 50px;
-            display: inline-block;
+            box-sizing: border-box;
+            border-radius: 15px;
+            margin: 10px 0;
+            line-height: 30px;
+
+            img {
+                height: 30px;
+                margin: 0;
+                padding: 0;
+            }
         }
     }
     @keyframes popin {
@@ -81,18 +103,52 @@
             pre {
                 margin: 0;
             }
+
         }
     }
 }
+.code-snip {
+    display: block;
+    background: red;
+    width: 100%;
+    min-height: 300px;
+    border-radius: 3px;
+    border: 1px solid #f3f3f3;
+}
+.codeBlock {
+    background: red;
+}
+.superFancyBlockquote {
+    color: red;
+    font-family: 'Hoefler Text', Georgia, serif;
+    font-style: italic;
+    text-align: center;
+  }
 
 @media screen and (min-width: 950px) {
     #document {
         box-sizing: content-box;
         width: calc(60% - 250px);
-        padding: 50px 20% 50px calc(250px + 20%);
+        padding: 10px 20% 10px calc(250px + 20%);
     }
     #document-content {
         border-radius: 5px;
         padding: 50px;
+    }
+    #document-widgets {
+        border-radius: 3px !important;
+        width: auto !important;
+        height: 35px !important;
+        left: 50vw !important;
+        padding: 0 10px !important;
+        transform: translateX(-50%);
+        .document-widgets-button {   
+            line-height: 35px !important;
+            padding: 0 !important;
+            margin: 5px 5px !important;
+            img {
+                height: 25px !important;
+            }
+         }
     }
 }

@@ -5,6 +5,12 @@ import Hammer from 'react-hammerjs';
 import AddDocument from './AddDocument/AddDocument';
 import Document from './Document/Document';
 import './dashboard.css';
+import {
+    BrowserView,
+    MobileView,
+    isBrowser,
+    isMobile
+  } from "react-device-detect";
 
 export default class Dashboard extends React.Component {
 
@@ -14,13 +20,16 @@ export default class Dashboard extends React.Component {
             NavVisible: false,
             navPos: 0,
             navWidth: 0.7,
-            darkTheme: false
+            darkTheme: false,
+            currentIndex: 0
         }
         this.triggerMenu = this.triggerMenu.bind(this);
         this.triggerUnlockMenu = this.triggerUnlockMenu.bind(this);
         this.triggerLockMenu = this.triggerLockMenu.bind(this);
         this.resize = this.resize.bind(this);
         this.switchTheme = this.switchTheme.bind(this);
+        this.updateNav = this.updateNav.bind(this);
+        this.currentIndex = this.currentIndex.bind(this);
     }
 
     componentDidMount() {
@@ -30,10 +39,10 @@ export default class Dashboard extends React.Component {
     }
     
     resize() {
-        if(window.innerWidth < 950) {
+        if(isMobile) {
             this.setState({screenWidth: window.innerWidth, navPos: this.state.NavVisible ? this.state.navPos : window.innerWidth * this.state.navWidth});
         }else{
-            this.setState({NavVisible: true, navPos: 0})
+            this.setState({screenWidth: window.innerWidth, NavVisible: true, navPos: 0})
         }
     }
 
@@ -43,13 +52,25 @@ export default class Dashboard extends React.Component {
     }
 
     triggerMenu(e) {
-        if(this.state.screenWidth < 950) { // Mobile/tablet
+        if(isMobile) { // Mobile/tablet
             if(!e.direction){
                 this.setState({ NavVisible: true,  navPos: (this.state.navPos < 0 || !this.state.NavVisible) ? 0 : -(this.state.screenWidth*this.state.navWidth)});
             } else if(e.direction === 4 && -(this.state.screenWidth*this.state.navWidth) + e.center.x < 0){
                 this.setState({ NavVisible: true,  navPos: -(this.state.screenWidth*this.state.navWidth) + e.center.x});
             }else if(e.direction === 2 && -(this.state.screenWidth*this.state.navWidth) + e.center.x > -(this.state.screenWidth*this.state.navWidth) && -(this.state.screenWidth*this.state.navWidth) + e.center.x < 0)
                 this.setState({ NavVisible: true,  navPos: -(this.state.screenWidth*this.state.navWidth) + e.center.x});
+        }
+    }
+
+    updateNav(index) {
+        this.setState({currentIndex: index})
+    }
+
+    currentIndex(e) {
+        if(e.direction == 2) {
+            this.updateNav(this.state.currentIndex+1);
+        }else if(e.direction == 4 && this.state.currentIndex > 0) {
+            this.updateNav(this.state.currentIndex-1);
         }
     }
 
@@ -71,11 +92,19 @@ export default class Dashboard extends React.Component {
             touchAction:'compute',
             direction: 'DIRECTION_LEFT'
         };
+        const swipeOptions = {
+            touchAction:'compute',
+            recognizers: {
+                tap: {
+                    time: 600,
+                    threshold: 600
+                }
+            }
+        }
 
         return (
-            
                 <div>
-                    <Nav theme={this.state.darkTheme} triggerEvent={this.triggerMenu} xRotate={this.state.navPos/(this.state.screenWidth*this.state.navWidth)}/>
+                    <Nav theme={this.state.darkTheme} triggerEvent={this.triggerMenu} updateNav={this.updateNav} forceNav={this.state.currentIndex} xRotate={this.state.navPos/(this.state.screenWidth*this.state.navWidth)}/>
                     
                     <Hammer onPan={this.triggerMenu} onPanStart={this.triggerUnlockMenu} onPanEnd={this.triggerLockMenu} options={hammerOptions}>
                         <div>
@@ -83,7 +112,9 @@ export default class Dashboard extends React.Component {
                             <div id="sidebarHandle"></div>
                         </div>
                     </Hammer>
-                    <Document theme={this.state.darkTheme} />
+                    <Hammer onSwipe={this.currentIndex} options={swipeOptions}>       
+                        <div><Document theme={this.state.darkTheme} currentIndex={this.state.currentIndex}/></div>
+                    </Hammer>
                     <AddDocument />
                 </div>
         );

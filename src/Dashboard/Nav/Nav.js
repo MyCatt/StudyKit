@@ -14,8 +14,16 @@ export default class Nav extends React.Component {
         this.newlySelected = this.newlySelected.bind(this);
     }
 
+    componentWillReceiveProps(nextProp) {
+        if(this.state.openedPage != nextProp.forceNav && nextProp.forceNav != undefined)
+            this.newlySelected(nextProp.forceNav);
+    }
+
     newlySelected(index) {
-        this.setState({openedPage: index})
+        if(index < this.state.pageArray.length) {
+            this.setState({openedPage: index});
+            this.props.updateNav(index);
+        }
     }
 
     render(props) {
@@ -33,7 +41,7 @@ export default class Nav extends React.Component {
                     <div id="page-explore">
                         <img src={Book}></img><span>Open File</span>
                     </div>
-                    {this.state.pageArray.map((content, index) => <span onClick={() => this.newlySelected(index)} class={this.state.openedPage == index ? "page-shifter-item active" : "page-shifter-item"}>{content}</span> )}
+                    {this.state.pageArray.map((content, index) => <span key={"tab" + index} onClick={() => this.newlySelected(index)} className={this.state.openedPage == index ? "page-shifter-item active" : "page-shifter-item"}>{content}</span> )}
                 </div>
             </div>
         );

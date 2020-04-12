@@ -89,6 +89,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 4px;
+  cursor: pointer;
   color: inherit;
   display: inline-block;
   margin: 0 4px;
